@@ -34,7 +34,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      {/* 👇 APPLY THE FONT CLASSES HERE */}
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <Navbar
           logo="/logo.png"
           logoText="/logo-text.png"
