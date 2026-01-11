@@ -19,9 +19,9 @@ const philosophyItems = [
 
 export default function TeamPhilosophy() {
   return (
-    <section className="bg-white py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-16">
+    <section className="bg-white pt-4 pb-6 lg:pt-6 lg:pb-10 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-[42px] font-serif text-[#1E3A5F] mb-8 md:mb-12 text-left">
+        <h2 className="text-3xl md:text-4xl lg:text-[24px] font-sans text-black mb-4 md:mb-6 text-left">
           Team Philosophy
         </h2>
         
@@ -29,10 +29,16 @@ export default function TeamPhilosophy() {
           {philosophyItems.map((item) => (
             <div
               key={item.id}
-              className="bg-gray-200 rounded-xl px-6 py-5 flex items-start gap-4"
+              // CHANGE:
+              // 1. Fixed width/height: 'w-full md:w-[361px]' and 'h-[52px]'
+              // 2. Alignment: 'items-center' (instead of items-start) to center text vertically
+              // 3. Removed 'py-5' (height is now fixed)
+              className="bg-gray-200 rounded-xl px-6 h-[52px] w-full md:w-[361px] flex items-center gap-4 hover:shadow-lg transition-shadow duration-300"
             >
-              <span className="text-[#1F2933] text-2xl leading-none mt-[-4px] font-bold">•</span>
-              <span className="text-[#1F2933] text-sm md:text-base leading-relaxed">
+              <span className="text-[#1F2933] text-2xl leading-none font-bold">•</span>
+              
+              {/* CHANGE: Font size set to 'text-[18px]' */}
+              <span className="text-[#1F2933] text-[18px] leading-snug">
                 {item.text}
               </span>
             </div>

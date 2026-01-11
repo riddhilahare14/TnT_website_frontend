@@ -19,18 +19,20 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
 
   return (
     // OUTER CONTAINER
-    // Mobile: White card, Shadow, Rounded, WITH PADDING (p-6)
-    // Desktop: Transparent/Grid layout
-    <div className={`
-      bg-white rounded-[32px] shadow-xl max-w-md mx-auto p-6
-      lg:p-0 lg:bg-transparent lg:shadow-none lg:rounded-none lg:max-w-none lg:overflow-visible
-      lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center font-sans
-      ${!isImageLeft ? 'lg:grid-flow-dense' : ''}
-    `}>
+    <div 
+      // CHANGE 1: Added id here so the Footer links (e.g. #doorstep-grooming) can find this section
+      id={service.id} 
+      // CHANGE 2: Added 'scroll-mt-32' so it doesn't scroll behind the sticky navbar
+      className={`
+        scroll-mt-32 
+        bg-white rounded-[32px] shadow-xl max-w-md mx-auto p-6
+        lg:p-0 lg:bg-transparent lg:shadow-none lg:rounded-none lg:max-w-none lg:overflow-visible
+        lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center font-sans
+        ${!isImageLeft ? 'lg:grid-flow-dense' : ''}
+      `}
+    >
       
       {/* IMAGE SECTION */}
-      {/* Mobile: rounded-2xl (Neat corners inside padding), shadow-none (No shadow on image) */}
-      {/* Desktop: rounded-[32px] */}
       <div className={`
         relative w-full h-[250px] sm:h-[300px] rounded-2xl shadow-none overflow-hidden
         lg:h-auto lg:aspect-[540/346] lg:rounded-[32px]
@@ -45,8 +47,6 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       </div>
 
       {/* CONTENT SECTION */}
-      {/* Mobile: Top margin (mt-6) for spacing from image */}
-      {/* Desktop: No margin, left aligned */}
       <div className={`
         mt-6 text-center
         lg:mt-0 lg:text-left

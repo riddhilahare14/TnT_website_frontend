@@ -11,12 +11,12 @@ export default function MissionStatement() {
         </blockquote>
         
         <div className="flex flex-col items-center gap-5">
-          <p className="text-[#6B7280] text-sm md:text-base font-medium">
+          <p className="text-[#6B7280] text-sm md:text-base font-sans font-medium">
             Experience this in the App
           </p>
           <a
             href="#"
-            className="bg-[#2F5F88] hover:bg-[#1E3A5F] text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-300 text-sm md:text-base shadow-md hover:shadow-lg"
+            className="bg-[#2F5F88] hover:bg-[#1E3A5F] text-white px-8 py-3.5 rounded-lg font-sans font-medium transition-all duration-300 text-sm md:text-base shadow-md hover:shadow-lg"
           >
             Download the App
           </a>

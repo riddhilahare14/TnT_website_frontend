@@ -25,15 +25,13 @@ const principles = [
 
 export default function HowWeThink() {
   return (
-    <section className="bg-[#E8F0F6] py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-16">
+    <section className="bg-[#E8F0F6] py-8 lg:py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-[42px] font-serif text-[#1E3A5F] mb-8 md:mb-12 text-left">
+        {/* CHANGE: Reduced 'mb-8 md:mb-12' to 'mb-4 md:mb-6' to decrease space below heading */}
+        <h2 className="text-3xl md:text-4xl lg:text-[24px] font-sans text-black mb-4 md:mb-6 text-left">
           How We Think
         </h2>
         
-        {/* CHANGE: Updated layout classes */}
-        {/* 'flex-col items-center': Stacks them vertically and centers them on Mobile */}
-        {/* 'sm:flex-row sm:flex-wrap': Switches back to horizontal wrapping on larger screens */}
         <div className="flex flex-col items-center sm:flex-row sm:flex-wrap gap-4 md:gap-6">
           {principles.map((principle) => (
             <div
