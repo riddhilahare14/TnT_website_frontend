@@ -9,7 +9,7 @@ export default function AppDownload() {
           {/* DESKTOP IMAGE (Hidden on Mobile) */}
           <div className="hidden lg:flex justify-center lg:justify-start lg:pl-24">
             <Image
-              src="/images/app-phone.png"
+              src="/images/app-phone.svg"
               alt="Tails and Tales App"
               width={401}
               height={564}
@@ -55,7 +55,7 @@ export default function AppDownload() {
                 {/* Google Play (Dark) */}
                 <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[140px] h-[44px] rounded-lg shadow-md">
                   <Image 
-                    src="/icons/google-play.png" 
+                    src="/icons/play-store.svg" 
                     alt="Google Play" 
                     width={16} 
                     height={16}
@@ -66,7 +66,7 @@ export default function AppDownload() {
                 {/* App Store (White) */}
                 <button className="flex items-center justify-center gap-2 bg-white w-[140px] h-[44px] rounded-lg border border-gray-200 shadow-sm">
                   <Image 
-                    src="/icons/apple.png" 
+                    src="/icons/app-store.svg" 
                     alt="Apple" 
                     width={16} 
                     height={16}
@@ -85,7 +85,7 @@ export default function AppDownload() {
               <div className="flex flex-wrap gap-4">
                 <button className="flex items-center justify-center gap-2 bg-white w-[166px] h-[54px] rounded-lg hover:bg-gray-50 transition-colors border border-gray-200 shadow-sm">
                   <Image 
-                    src="/icons/apple.png" 
+                    src="/icons/app-store.svg" 
                     alt="Apple" 
                     width={20} 
                     height={20}
@@ -95,7 +95,7 @@ export default function AppDownload() {
 
                 <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[166px] h-[54px] rounded-lg hover:bg-[#2F3D4D] transition-colors shadow-md">
                   <Image 
-                    src="/icons/google-play.png" 
+                    src="/icons/play-store.svg" 
                     alt="Google Play" 
                     width={20} 
                     height={20}

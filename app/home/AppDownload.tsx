@@ -9,7 +9,7 @@ export default function AppDownload() {
           {/* DESKTOP IMAGE: Hidden on mobile, visible on desktop */}
           <div className="hidden lg:flex justify-center lg:justify-start lg:pl-24">
             <Image
-              src="/images/app-phone.png"
+              src="/images/app-phone.svg"
               alt="Tails and Tales App"
               width={401}
               height={564}
@@ -51,7 +51,7 @@ export default function AppDownload() {
                 {/* CHANGE 2: Increased size to w-[180px] h-[56px] */}
                 <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[180px] h-[56px] rounded-lg hover:bg-[#2F3D4D] transition-colors shadow-lg">
                   <Image 
-                    src="/icons/google-play.png" 
+                    src="/icons/play-store.svg" 
                     alt="Google Play" 
                     width={24} 
                     height={24}
@@ -63,7 +63,7 @@ export default function AppDownload() {
                 {/* CHANGE 2: Increased size to w-[160px] h-[56px] */}
                 <button className="flex items-center justify-center gap-2 bg-white w-[180px] h-[56px] rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                   <Image 
-                    src="/icons/apple.png" 
+                    src="/icons/app-store.svg" 
                     alt="Apple" 
                     width={24} 
                     height={24}
@@ -77,7 +77,7 @@ export default function AppDownload() {
             <div className="hidden lg:flex flex-wrap gap-4 pt-4">
               <button className="flex items-center justify-center gap-2 bg-white w-[166px] h-[54px] rounded-lg hover:bg-gray-100 transition-colors">
                 <Image 
-                  src="/icons/apple.png" 
+                  src="/icons/app-store.svg" 
                   alt="Apple" 
                   width={20} 
                   height={20}
@@ -87,7 +87,7 @@ export default function AppDownload() {
 
               <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[166px] h-[54px] rounded-lg hover:bg-[#2F3D4D] transition-colors">
                 <Image 
-                  src="/icons/google-play.png" 
+                  src="/icons/play-store.svg" 
                   alt="Google Play" 
                   width={20} 
                   height={20}

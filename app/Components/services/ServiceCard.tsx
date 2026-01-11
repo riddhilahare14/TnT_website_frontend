@@ -59,7 +59,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
             <h2 className="text-[24px] font-bold text-[#1F2933]">
               {service.title}
             </h2>
-            <div className="relative w-8 h-8 opacity-80 flex-shrink-0">
+            <div className="relative w-8 h-8 flex-shrink-0">
               <Image 
                 src={service.icon} 
                 alt={`${service.title} icon`}

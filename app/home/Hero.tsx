@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <Image 
-                  src="/icons/apple.png" 
+                  src="/icons/app-store.svg" 
                   alt="Apple" 
                   width={20} 
                   height={20}
@@ -47,7 +47,7 @@ export default function Hero() {
               </button>
               <button className="flex items-center gap-2 bg-[#1F2933] px-6 py-3 rounded-lg hover:bg-[#2F3D4D] transition-colors">
                 <Image 
-                  src="/icons/playstore.png" 
+                  src="/icons/play-store.svg" 
                   alt="Play Store" 
                   width={20} 
                   height={20}

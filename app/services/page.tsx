@@ -7,7 +7,7 @@ const servicesData = [
     id: 'doorstep-grooming',
     title: 'Doorstep Grooming',
     // CHANGE: Updated to use PNG path instead of emoji
-    icon: '/icons/services/icon1.png', 
+    icon: '/icons/services/1.svg', 
     subtitle: 'Care that comes home - calm, clean, and completely personal',
     image: '/images/services/grooming.png',
     features: [
@@ -22,7 +22,7 @@ const servicesData = [
     id: 'health-wellness',
     title: 'Health & Wellness',
     // CHANGE: Updated to use PNG path
-    icon: '/icons/services/icon2.png',
+    icon: '/icons/services/2.svg', 
     subtitle: 'Proactive care for a healthier, happier pet',
     image: '/images/services/health.png',
     features: [
@@ -37,7 +37,7 @@ const servicesData = [
     id: 'training-behaviour',
     title: 'Training & Behaviour',
     // CHANGE: Updated to use PNG path
-    icon: '/icons/services/icon3.png',
+    icon: '/icons/services/3.svg',
     subtitle: 'Guiding behaviour with patience, trust, and kindness',
     image: '/images/services/training.png',
     features: [
@@ -52,7 +52,7 @@ const servicesData = [
     id: 'boarding-daycare',
     title: 'Boarding & Daycare',
     // CHANGE: Updated to use PNG path
-    icon: '/icons/services/icon4.png',
+    icon: '/icons/services/4.svg',
     subtitle: 'A second home where your pet feels comforted and never alone',
     image: '/images/services/boarding.png',
     features: [
@@ -67,7 +67,7 @@ const servicesData = [
     id: 'community-experiences',
     title: 'Community & Experiences',
     // CHANGE: Updated to use PNG path
-    icon: '/icons/services/icon5.png',
+    icon: '/icons/services/5.svg',
     subtitle: 'Experiences that bring tails and hearts together',
     image: '/images/services/community.png',
     features: [

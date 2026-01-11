@@ -2,15 +2,15 @@ import Image from 'next/image';
 
 const trustItems = [
   {
-    icon: '/icons/certified.png',
+    icon: '/icons/plan-offers/1.svg',
     title: 'Certified Professionals'
   },
   {
-    icon: '/icons/structured-care.png',
+    icon: '/icons/plan-offers/2.svg',
     title: 'Structured Care'
   },
   {
-    icon: '/icons/delivered-responsibility.png',
+    icon: '/icons/plan-offers/3.svg',
     title: 'Delivered with responsibility'
   }
 ];

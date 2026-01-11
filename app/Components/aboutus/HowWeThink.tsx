@@ -4,22 +4,22 @@ const principles = [
   {
     id: 1,
     text: 'Life cycle-based care',
-    icon: '/images/icons/lifecycle-icon.png',
+    icon: '/icons/aboutus/1.svg',
   },
   {
     id: 2,
     text: 'Prevention over reaction',
-    icon: '/images/icons/prevention-icon.png',
+    icon: '/icons/aboutus/2.svg',
   },
   {
     id: 3,
     text: 'Trust over transactions',
-    icon: '/images/icons/trust-icon.png',
+    icon: '/icons/aboutus/3.svg',
   },
   {
     id: 4,
     text: 'Quality before scale',
-    icon: '/images/icons/quality-icon.png',
+    icon: '/icons/aboutus/4.svg',
   },
 ];
 

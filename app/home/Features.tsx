@@ -2,22 +2,22 @@ import Image from 'next/image';
 
 const features = [
   {
-    icon: '/icons/easy-bonding.png',
+    icon: '/icons/eternal-pet-care/1.svg',
     title: 'Early Bonding',
     description: 'Nurture • Foundation • Growth'
   },
   {
-    icon: '/icons/training.png',
+    icon: '/icons/eternal-pet-care/2.svg',
     title: 'Training & Socialization',
     description: 'Exploration • Learning • Play'
   },
   {
-    icon: '/icons/active-wellness.png',
+    icon: '/icons/eternal-pet-care/3.svg',
     title: 'Active Wellness',
     description: 'Health • Energy • Strength'
   },
   {
-    icon: '/icons/care-support.png',
+    icon: '/icons/eternal-pet-care/4.svg',
     title: 'Senior Comfort',
     description: 'Care • Support • Golden Years',
     highlight: true
