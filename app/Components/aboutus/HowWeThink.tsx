@@ -27,16 +27,16 @@ export default function HowWeThink() {
   return (
     <section className="bg-[#E8F0F6] py-8 lg:py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* CHANGE: Reduced 'mb-8 md:mb-12' to 'mb-4 md:mb-6' to decrease space below heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-[24px] font-sans text-black mb-4 md:mb-6 text-left">
+        {/* CHANGE: Added 'lg:text-left' so it aligns left on desktop, while staying centered on mobile */}
+        <h2 className="text-[20px] lg:text-[24px] font-sans font-semibold text-black mb-4 md:mb-6 text-center lg:text-left">
           How We Think
         </h2>
         
-        <div className="flex flex-col items-center sm:flex-row sm:flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-col items-center sm:flex-row sm:flex-wrap justify-center gap-4 md:gap-6">
           {principles.map((principle) => (
             <div
               key={principle.id}
-              className="bg-[#2F5F88] text-white rounded-xl w-[281px] h-[60px] px-4 flex items-center justify-center gap-3"
+              className="bg-[#2F5F88] text-white rounded-xl w-[281px] h-[50px] px-4 flex items-center justify-center gap-3 shadow-lg"
             >
               <span className="text-sm md:text-base font-sans font-medium leading-snug">
                 {principle.text}

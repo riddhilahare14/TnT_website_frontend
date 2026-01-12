@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+// 1. Ensure useState is imported here
+import { useEffect, useState } from 'react';
 
 interface ImageCreditsModalProps {
   isOpen: boolean;
@@ -9,7 +10,7 @@ interface ImageCreditsModalProps {
 
 const creditsData = [
   {
-    category: 'Landing Page',
+    category: 'Home',
     items: [
       {
         label: "Young women’s posing with pet",
@@ -34,7 +35,7 @@ const creditsData = [
     ]
   },
   {
-    category: 'Services Page',
+    category: 'Services',
     items: [
       {
         label: "Doorstep Grooming",
@@ -64,7 +65,7 @@ const creditsData = [
     ]
   },
   {
-    category: 'About Us Page',
+    category: 'About Us',
     items: [
       {
         label: "About us",
@@ -76,27 +77,47 @@ const creditsData = [
 ];
 
 export default function ImageCreditsModal({ isOpen, onClose }: ImageCreditsModalProps) {
+  // 2. Ensure this line exists to define isVisible and setIsVisible
+  const [isVisible, setIsVisible] = useState(false);
+
+  
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
     if (isOpen) {
+      // FIX: Use setTimeout(..., 0) to avoid "setState synchronously within effect" error
+      timeoutId = setTimeout(() => setIsVisible(true), 0);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      // Delay unmount for exit animation
+      timeoutId = setTimeout(() => setIsVisible(false), 300);
     }
 
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    return () => clearTimeout(timeoutId);
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen && !isVisible) return null;
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
-      onClick={onClose}
+      className={`fixed inset-0 z-50 flex items-end lg:items-center justify-center transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
     >
+      {/* Backdrop */}
       <div 
-        className="bg-white rounded-2xl shadow-2xl max-w-lg w-full relative max-h-[80vh] flex flex-col"
+        className="absolute inset-0 bg-black bg-opacity-50" 
+        onClick={onClose}
+      />
+
+      {/* Modal Content */}
+      <div 
+        className={`
+          bg-white w-full lg:w-auto lg:max-w-lg 
+          rounded-t-2xl lg:rounded-2xl rounded-b-none lg:rounded-b-2xl 
+          shadow-2xl relative max-h-[85vh] lg:max-h-[80vh] flex flex-col
+          transform transition-transform duration-300 ease-out
+          ${isOpen ? 'translate-y-0 scale-100' : 'translate-y-full lg:translate-y-0 lg:scale-95'}
+        `}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -121,28 +142,27 @@ export default function ImageCreditsModal({ isOpen, onClose }: ImageCreditsModal
         </button>
 
         {/* Modal Header */}
-        <div className="p-8 pb-0">
-          <h2 className="text-2xl text-[#1E3A5F] mb-3 text-center font-semibold">
+        {/* CHANGE: Changed 'border-gray-100' to 'border-gray-300' for a darker divider */}
+        <div className="p-6 pb-2 border-b border-gray-300 text-center">
+          <h2 className="text-xl lg:text-2xl text-[#1E3A5F] font-semibold font-sans">
             Image Credits
           </h2>
-          <div className="w-full border-b border-gray-200"></div>
         </div>
 
         {/* Modal Content (Scrollable) */}
-        <div className="p-8 overflow-y-auto font-sans">
+        <div className="p-6 pt-4 overflow-y-auto font-sans">
           <div className="space-y-6">
             {creditsData.map((section, idx) => (
               <div key={idx}>
                 {/* Section Title */}
-                <h3 className="text-[#1E3A5F] font-semibold text-lg mb-3">
+                <h3 className="text-[#1E3A5F] font-semibold text-base lg:text-lg mb-2">
                   {section.category}
                 </h3>
                 
                 {/* Links List */}
                 <ul className="space-y-2">
                   {section.items.map((item, itemIdx) => (
-                    // CHANGE: Removed 'block' from span and layout is now inline
-                    <li key={itemIdx} className="text-sm text-[#6B7280]">
+                    <li key={itemIdx} className="text-[14px] text-[#6B7280] leading-snug">
                       <span className="font-medium text-gray-800">{item.label}</span>
                       <span className="mx-1">-</span>
                       <a 

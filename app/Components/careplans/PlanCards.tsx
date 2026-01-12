@@ -4,7 +4,6 @@ type PlanCardsProps = {
   selectedPet: 'dogs' | 'cats';
 };
 
-// 1. Unified Data (Same for everyone)
 const plans = [
   {
     id: 'basic',
@@ -22,10 +21,11 @@ const plans = [
     title: 'Plus Care',
     subtitle: 'Designed for busy pet parents',
     features: [
-      'All basic care benefits',
-      'Priority booking',
+      'All basic care benefits included',
+      'Priority booking for services',
       'Quarterly wellness checks',
-      'Nutritional planning',
+      'Nutritional planning support',
+      'Pet taxi discounts',
     ],
   },
   {
@@ -33,20 +33,20 @@ const plans = [
     title: 'Eternal Care',
     subtitle: 'Premium, full responsibility coverage',
     features: [
-      'All Plus benefits',
-      '24/7 vet consultation',
-      'Monthly grooming',
-      'Comprehensive insurance',
+      'All Plus Care benefits included',
+      '24/7 vet consultation access',
+      'Monthly grooming sessions',
+      'Comprehensive insurance handling',
+      'Dedicated care manager',
     ],
   },
 ];
 
 export default function PlanCards({ selectedPet }: PlanCardsProps) {
-  // selectedPet is ready for future logic (dogs/cats)
-  console.log(selectedPet);
-
   return (
-    <section className="bg-white py-12 lg:py-20">
+    // CHANGE: Reduced 'pt' (padding-top) to 'pt-2' for mobile and 'lg:pt-6' for desktop.
+    // This reduces the space directly above the first card (between toggle and cards).
+    <section className="bg-white pt-4 pb-12 lg:pt-8 lg:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((plan) => (

@@ -9,32 +9,33 @@ const facilities = [
 
 export default function SafeStressFree() {
   return (
-    <section className="pt-16 pb-8 lg:pt-24 lg:pb-12 bg-white flex flex-col">
+    <section className="pt-8 pb-8 lg:pt-24 lg:pb-12 bg-white flex flex-col">
       
       {/* --- BLOCK 1: HEADING --- */}
       <div className="order-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-        <h2 className="text-3xl lg:text-4xl font-serif text-[#1F2933] mb-6 lg:mb-3">
+        <h2 className="text-3xl md:text-4xl lg:text-[32px] font-serif text-[#1F2933] mb-5 lg:mb-3">
           Designed for Safe, Stress-Free Pet Care
         </h2>
       </div>
 
       {/* --- BLOCK 2: TEXT PARAGRAPH --- */}
-      {/* Mobile: Order 3 (Bottom) */}
-      {/* Desktop: Order 2 (Middle) */}
       <div className="order-3 lg:order-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full lg:mb-12">
-        <p className="text-lg text-[#6B7280]">
-          Where grooming, checkups, and care happen - calmly and safely.
+        <p className="font-sans text-[16px] lg:text-lg text-[#4B5563]">
+          Where grooming, checkups, and care happen calmly and safely.
         </p>
       </div>
 
       {/* --- BLOCK 3: SCROLLABLE IMAGES --- */}
-      {/* Mobile: Order 2 (Middle) */}
-      {/* Desktop: Order 3 (Bottom) */}
-      
-      {/* CHANGE: Reduced 'mb-8' to 'mb-4' to decrease space below images on mobile */}
       <div className="order-2 lg:order-3 w-full mb-4 lg:mb-0">
+        
+        {/* Scroll Hint Text */}
+        {/* CHANGE: Removed 'lg:hidden' so it shows on desktop too */}
+        <p className="text-center text-xs text-gray-400 mb-3 font-sans italic">
+          &larr; Swipe to view &rarr;
+        </p>
+
         <div className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <div className="flex gap-16 px-4 sm:px-6 lg:px-8 pb-4 lg:pb-8">
+          <div className="flex gap-4 md:gap-8 lg:gap-16 px-4 sm:px-6 lg:px-8 pb-4 lg:pb-8">
             {facilities.map((facility, index) => (
               <div 
                 key={index} 

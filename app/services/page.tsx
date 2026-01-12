@@ -6,7 +6,6 @@ const servicesData = [
   {
     id: 'doorstep-grooming',
     title: 'Doorstep Grooming',
-    // CHANGE: Updated to use PNG path instead of emoji
     icon: '/icons/services/1.svg', 
     subtitle: 'Care that comes home - calm, clean, and completely personal',
     image: '/images/services/grooming.png',
@@ -21,7 +20,6 @@ const servicesData = [
   {
     id: 'health-wellness',
     title: 'Health & Wellness',
-    // CHANGE: Updated to use PNG path
     icon: '/icons/services/2.svg', 
     subtitle: 'Proactive care for a healthier, happier pet',
     image: '/images/services/health.png',
@@ -36,7 +34,6 @@ const servicesData = [
   {
     id: 'training-behaviour',
     title: 'Training & Behaviour',
-    // CHANGE: Updated to use PNG path
     icon: '/icons/services/3.svg',
     subtitle: 'Guiding behaviour with patience, trust, and kindness',
     image: '/images/services/training.png',
@@ -51,7 +48,6 @@ const servicesData = [
   {
     id: 'boarding-daycare',
     title: 'Boarding & Daycare',
-    // CHANGE: Updated to use PNG path
     icon: '/icons/services/4.svg',
     subtitle: 'A second home where your pet feels comforted and never alone',
     image: '/images/services/boarding.png',
@@ -66,7 +62,6 @@ const servicesData = [
   {
     id: 'community-experiences',
     title: 'Community & Experiences',
-    // CHANGE: Updated to use PNG path
     icon: '/icons/services/5.svg',
     subtitle: 'Experiences that bring tails and hearts together',
     image: '/images/services/community.png',
@@ -84,20 +79,18 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
       
-      {/* HERO SECTION WRAPPER
-        bg-gradient-to-b: Creates a vertical gradient (Top to Bottom)
-        from-[#E8F0F6]: Starts with your blue shade
-        to-white: Ends in pure white
-        
-        This ensures the blue is only at the top and fades out before the services list starts.
-      */}
-      <div className="bg-gradient-to-b from-[#E8F0F6] to-white pb-8">
+      {/* HERO SECTION WRAPPER */}
+      <div className="bg-gradient-to-b from-[#E8F0F6] to-white pb-0 lg:pt-12">
         <ServicesHero />
       </div>
       
-      {/* Services List - Background is white from the <main> tag */}
-      <section className="pt-4 pb-20 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 lg:space-y-32">
+      {/* Services List */}
+      <section className="pt-0 pb-20 lg:pb-32">
+        {/* CHANGE: Reduced spacing 
+            - Mobile: space-y-6 (was space-y-8)
+            - Desktop: lg:space-y-16 (was lg:space-y-32) 
+        */}
+        <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 space-y-6 lg:space-y-16">
           {servicesData.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
