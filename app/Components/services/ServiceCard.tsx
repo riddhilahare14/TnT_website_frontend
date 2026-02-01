@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link for navigation
 
 interface ServiceCardProps {
   service: {
@@ -77,7 +80,6 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
             {service.features.map((feature, idx) => (
               <li key={idx} className="flex items-start gap-2 text-[#1F2933]">
                 <span className="text-black text-[10px] mt-1.5">●</span> 
-                {/* CHANGE: Updated text color to #374151 */}
                 <span className="text-[14px] lg:text-base font-medium text-[#374151] font-sans leading-tight">
                   {feature}
                 </span>
@@ -86,28 +88,29 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
           </ul>
 
           {/* Description */}
-          {/* CHANGE: Updated text color to #374151 */}
           <p className="text-[#374151] text-[12px] lg:text-sm font-sans leading-tight">
             {service.description}
           </p>
 
-          {/* Button */}
-          <button className="flex items-center justify-center gap-2 bg-[#2F5F88] text-white px-6 py-2.5 rounded-lg hover:bg-[#1E3A5F] transition-colors text-[14px] font-medium shadow-sm w-full lg:w-auto font-sans">
-            <svg 
-              className="w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" 
-              />
-            </svg>
-            Book via the App
-          </button>
+          {/* Button wrapped in Link */}
+          <Link href="/get-app" className="block w-full lg:w-auto">
+            <button className="flex items-center justify-center gap-2 bg-[#2F5F88] text-white px-6 py-2.5 rounded-lg hover:bg-[#1E3A5F] transition-colors text-[14px] font-medium shadow-sm w-full lg:w-auto font-sans">
+              <svg 
+                className="w-4 h-4" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.5" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" 
+                />
+              </svg>
+              Book via the App
+            </button>
+          </Link>
         </div>
       </div>
     </div>

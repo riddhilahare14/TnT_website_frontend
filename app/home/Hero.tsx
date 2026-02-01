@@ -1,3 +1,7 @@
+'use client';
+
+// FIX: Import Link from next/link for navigation instead of lucide-react
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -16,12 +20,10 @@ export default function Hero() {
 
             {/* 2. MOBILE IMAGE (Visible only on mobile/tablet) */}
             <div className="lg:hidden relative flex justify-center my-6">
-              {/* CHANGE: Set max-w to 312px to match image size */}
               <div className="bg-[#EEB541] rounded-3xl overflow-hidden w-full max-w-[312px]">
                  <Image
                   src="/images/hero-pet-owners.png"
                   alt="Pet Care"
-                  // CHANGE: Updated dimensions to 312x234
                   width={312}
                   height={234}
                   className="w-full h-auto"
@@ -36,26 +38,36 @@ export default function Hero() {
             </p>
             
             {/* 4. Buttons */}
-            {/* CHANGE: Reduced 'pt-4' to 'pt-2' for less spacing */}
             <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
-              <button className="flex items-center gap-2 bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <Image 
-                  src="/icons/app-store.svg" 
-                  alt="Apple" 
-                  width={20} 
-                  height={20}
-                />
-                <span className="text-sm font-medium font-sans text-[#1F2933]">App Store</span>
-              </button>
-              <button className="flex items-center gap-2 bg-[#1F2933] px-6 py-3 rounded-lg hover:bg-[#2F3D4D] transition-colors">
-                <Image 
-                  src="/icons/play-store.svg" 
-                  alt="Play Store" 
-                  width={20} 
-                  height={20}
-                />
-                <span className="text-sm font-medium font-sans text-white">Google Play</span>
-              </button>
+              
+              {/* App Store Button - Wrapped in Link for navigation */}
+              <Link href="/get-app">
+                <button
+                  className="flex items-center gap-2 bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <Image 
+                    src="/icons/app-store.svg" 
+                    alt="Apple" 
+                    width={20} 
+                    height={20}
+                  />
+                  <span className="text-sm font-medium font-sans text-[#1F2933]">App Store</span>
+                </button>
+              </Link>
+
+              {/* Google Play Button - Wrapped in Link for navigation */}
+              <Link href="/get-app">
+                <button
+                 className="flex items-center gap-2 bg-[#1F2933] px-6 py-3 rounded-lg hover:bg-[#2F3D4D] transition-colors">
+                  <Image 
+                    src="/icons/play-store.svg" 
+                    alt="Play Store" 
+                    width={20} 
+                    height={20}
+                  />
+                  <span className="text-sm font-medium font-sans text-white">Google Play</span>
+                </button>
+              </Link>
+
             </div>
           </div>
 

@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link'; // Import Link for navigation
+
 interface PlanCardProps {
   plan: {
     id: string;
@@ -14,7 +18,6 @@ export default function PlanCard({ plan }: PlanCardProps) {
       <div>
         {/* Header */}
         <div className="mb-6">
-          {/* CHANGE: Changed font-bold to font-semibold */}
           <h3 className="text-2xl font-semibold text-[#1F2933] mb-2">
             {plan.title}
           </h3>
@@ -34,10 +37,12 @@ export default function PlanCard({ plan }: PlanCardProps) {
         </ul>
       </div>
 
-      {/* Subscribe Button */}
-      <button className="w-full py-3 px-6 rounded-lg font-medium text-sm transition-all bg-transparent border-2 border-[#2F5F88] text-[#2F5F88] hover:bg-[#2F5F88] hover:text-white active:bg-[#2F5F88] active:text-white">
-        Subscribe via App
-      </button>
+      {/* Subscribe Button wrapped in Link */}
+      <Link href="/get-app">
+        <button className="w-full py-3 px-6 rounded-lg font-medium text-sm transition-all bg-transparent border-2 border-[#2F5F88] text-[#2F5F88] hover:bg-[#2F5F88] hover:text-white active:bg-[#2F5F88] active:text-white">
+          Subscribe via App
+        </button>
+      </Link>
     </div>
   );
 }

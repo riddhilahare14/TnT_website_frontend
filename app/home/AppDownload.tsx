@@ -1,9 +1,10 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link for navigation
 
 export default function AppDownload() {
   return (
-    // CHANGE: Changed padding to 'pt-6 pb-2' (Top: 6, Bottom: 2) 
-    // This adds space above the title but keeps the bottom tight.
     <section className="pt-6 pb-2 lg:py-4 bg-[#2F5F88]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -49,51 +50,62 @@ export default function AppDownload() {
               {/* Right Side: Vertical Buttons */}
               <div className="w-1/2 flex flex-col gap-4 pr-4">
                 
-                {/* Google Play (Dark) - Top */}
-                <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[145px] h-[46px] rounded-lg hover:bg-[#2F3D4D] transition-colors shadow-lg">
-                  <Image 
-                    src="/icons/play-store.svg" 
-                    alt="Google Play" 
-                    width={20} 
-                    height={20}
-                  />
-                  <span className="text-[14px] font-medium text-white font-sans">Google Play</span>
-                </button>
+                {/* Google Play (Dark) - Top - MOBILE */}
+                <Link href="/get-app">
+                  <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[145px] h-[46px] rounded-lg hover:bg-[#2F3D4D] transition-colors shadow-lg">
+                    <Image 
+                      src="/icons/play-store.svg" 
+                      alt="Google Play" 
+                      width={20} 
+                      height={20}
+                    />
+                    <span className="text-[14px] font-medium text-white font-sans">Google Play</span>
+                  </button>
+                </Link>
 
-                {/* App Store (White) - Bottom */}
-                <button className="flex items-center justify-center gap-2 bg-white w-[145px] h-[46px] rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                {/* App Store (White) - Bottom - MOBILE */}
+                <Link href="/get-app">
+                  <button className="flex items-center justify-center gap-2 bg-white w-[145px] h-[46px] rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                    <Image 
+                      src="/icons/app-store.svg" 
+                      alt="Apple" 
+                      width={20} 
+                      height={20}
+                    />
+                    <span className="text-[14px] font-medium text-[#1F2933] font-sans">App Store</span>
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* 3. DESKTOP BUTTONS: Visible ONLY on desktop */}
+            <div className="hidden lg:flex flex-wrap gap-4 pt-4">
+              
+              {/* App Store (White) - DESKTOP */}
+              <Link href="/get-app">
+                <button className="flex items-center justify-center gap-2 bg-white w-[145px] h-[40px] rounded-lg hover:bg-gray-100 transition-colors">
                   <Image 
                     src="/icons/app-store.svg" 
                     alt="Apple" 
                     width={20} 
                     height={20}
                   />
-                  <span className="text-[14px] font-medium text-[#1F2933] font-sans">App Store</span>
+                  <span className="text-sm font-medium text-[#1F2933] font-sans">App Store</span>
                 </button>
-              </div>
-            </div>
+              </Link>
 
-            {/* 3. DESKTOP BUTTONS: Visible ONLY on desktop */}
-            <div className="hidden lg:flex flex-wrap gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-white w-[145px] h-[40px] rounded-lg hover:bg-gray-100 transition-colors">
-                <Image 
-                  src="/icons/app-store.svg" 
-                  alt="Apple" 
-                  width={20} 
-                  height={20}
-                />
-                <span className="text-sm font-medium text-[#1F2933] font-sans">App Store</span>
-              </button>
-
-              <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[145px] h-[40px] rounded-lg hover:bg-[#2F3D4D] transition-colors">
-                <Image 
-                  src="/icons/play-store.svg" 
-                  alt="Google Play" 
-                  width={20} 
-                  height={20}
-                />
-                <span className="text-sm font-medium text-white font-sans">Google Play</span>
-              </button>
+              {/* Google Play (Dark) - DESKTOP */}
+              <Link href="/get-app">
+                <button className="flex items-center justify-center gap-2 bg-[#1F2933] w-[145px] h-[40px] rounded-lg hover:bg-[#2F3D4D] transition-colors">
+                  <Image 
+                    src="/icons/play-store.svg" 
+                    alt="Google Play" 
+                    width={20} 
+                    height={20}
+                    />
+                  <span className="text-sm font-medium text-white font-sans">Google Play</span>
+                </button>
+              </Link>
             </div>
 
           </div>

@@ -15,7 +15,7 @@ export default function MissionStatement() {
             Experience this in the App
           </p>
           <a
-            href="#"
+            href="/get-app"
             className="bg-[#2F5F88] hover:bg-[#1E3A5F] text-white px-8 py-3.5 rounded-lg font-sans font-medium transition-all duration-300 text-sm md:text-base shadow-md hover:shadow-lg"
           >
             Download the App

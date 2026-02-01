@@ -3,54 +3,61 @@ import Image from 'next/image';
 const principles = [
   {
     id: 1,
-    text: 'Life cycle-based care',
+    title: 'Life cycle-based care',
+    description: 'We support your pet at every stage, from puppyhood to senior care.',
     icon: '/icons/aboutus/1.svg',
   },
   {
     id: 2,
-    text: 'Prevention over reaction',
+    title: 'Prevention over reaction',
+    description: 'We focus on preventing problems before they become emergencies.',
     icon: '/icons/aboutus/2.svg',
   },
   {
     id: 3,
-    text: 'Trust over transactions',
+    title: 'Trust over transactions',
+    description: 'We build relationships that grow with your pet.',
     icon: '/icons/aboutus/3.svg',
   },
   {
     id: 4,
-    text: 'Quality before scale',
+    title: 'Quality before scale',
+    description: 'We grow carefully, without compromising the care we deliver.',
     icon: '/icons/aboutus/4.svg',
   },
 ];
 
 export default function HowWeThink() {
   return (
-    <section className="bg-[#E8F0F6] py-8 lg:py-12 px-4 md:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto">
-        {/* CHANGE: Added 'lg:text-left' so it aligns left on desktop, while staying centered on mobile */}
-        <h2 className="text-[20px] lg:text-[24px] font-sans font-semibold text-black mb-4 md:mb-6 text-center lg:text-left">
+    <section className="bg-[#E8F0F6] py-4 md:py-6 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Main Heading: 24px (text-2xl) on mobile, scaling up to 40px on desktop */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-[40px] font-serif text-[#2F5F88] leading-tight pb-6 text-center">
           How We Think
         </h2>
         
-        <div className="flex flex-col items-center sm:flex-row sm:flex-wrap justify-center gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-1">
           {principles.map((principle) => (
-            <div
-              key={principle.id}
-              className="bg-[#2F5F88] text-white rounded-xl w-[281px] h-[50px] px-4 flex items-center justify-center gap-3 shadow-lg"
-            >
-              <span className="text-sm md:text-base font-sans font-medium leading-snug">
-                {principle.text}
-              </span>
-
-              <div className="w-5 h-5 flex-shrink-0 relative">
+            <div key={principle.id} className="flex flex-col items-center max-w-[260px] mx-auto py-1 text-center">
+              <div className="mb-1 h-10 w-10 flex items-center justify-center">
                 <Image
                   src={principle.icon}
-                  alt={`${principle.text} icon`}
-                  width={20}
-                  height={20}
-                  className="w-full h-full object-contain"
+                  alt=""
+                  width={34}
+                  height={34}
+                  className="object-contain"
                 />
               </div>
+
+              {/* Title: 16px on mobile, 18px on desktop */}
+              <h3 className="text-black text-[16px] md:text-[18px] font-sans font-normal mb-0.5 leading-tight">
+                {principle.title}
+              </h3>
+
+              {/* Description: Stays at 14px as requested */}
+              <p className="text-[#333333] text-[14px] font-sans leading-snug px-2">
+                {principle.description}
+              </p>
             </div>
           ))}
         </div>
